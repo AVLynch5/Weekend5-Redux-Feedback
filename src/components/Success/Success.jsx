@@ -12,7 +12,7 @@ function Success() {
     const handleSubmissionSuccess = () => {
         const action = {type: 'CLEAR_TEMPFB'};
         dispatch(action);
-        //history.push(Form1);
+        history.push("/Form1");
     }
     return(
         <>
