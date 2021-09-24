@@ -21,6 +21,8 @@ function Admin() {
     }, []);
 
     //GET function. Could just GET data from server with DB query and map response.data like before, but will dispatch to redux for practice
+    //typically, would put useEffect and GET in app.jsx and access in components via props. I could move GET to app.jsx and pass it here via props, therefore making it passable to Review.jsx where it can be called in POST.
+    //No need for POST function in Review.jsx to call GET function.... admin page GETs and reloads on page load.
     const refreshFeedback = () => {
         axios({
             method: 'GET',
