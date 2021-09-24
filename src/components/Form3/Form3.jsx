@@ -9,7 +9,7 @@ import { useHistory } from "react-router";
 
 function Form3() {
     //declare state variable for form data - for clearing form after submission
-    //const [form1Data, setForm1Data] = useState('');
+    //const [form3Data, setForm3Data] = useState('');
 
     //declare dispatch
     const dispatch = useDispatch();
