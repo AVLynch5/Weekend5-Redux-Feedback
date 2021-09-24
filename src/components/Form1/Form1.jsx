@@ -23,15 +23,16 @@ function Form1() {
         event.preventDefault();
         //conditional to check user input - input validation
         if (feedbackobj.form1 > 0 && feedbackobj.form1 < 6) {
-            const action = {type: 'SET_FORM_1', payload: feedbackobj.form1};
+            //const action = {type: 'SET_FORM_1', payload: feedbackobj.form1}; - this is already done! If success, route to next page and retain value.
             //dispatch action
-            dispatch(action);
+            //dispatch(action);
+            //history.push(route); to redirect user to next form
         } else {
             alert('Please enter a valid number between 1 and 5');
             return;
         }
         //setForm1Data(''); - no longer want to clear input after submit button. If we return to this page, user should see entered value and be able to change.
-        //history.push(route); to redirect user to next form
+        
     }
     return(
         <>
