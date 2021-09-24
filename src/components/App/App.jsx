@@ -25,7 +25,7 @@ function App() {
         <h1 className='App-title'>Feedback!</h1>
         <h4>Don't forget it!</h4>
       </header>
-      <p>{JSON.stringify(reduxStore)}</p>
+      {/*<p>{JSON.stringify(reduxStore)}</p> - to view reduxStore contents - */}
       <Router>
         <Route exact path="/">
           <Home />
