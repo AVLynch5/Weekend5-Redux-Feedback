@@ -5,6 +5,7 @@ import './App.css';
 import { useSelector } from 'react-redux';
 //import components
 import Form1 from '../Form1/Form1';
+import Form2 from '../Form2/Form2';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       </header>
       <p>{JSON.stringify(reduxStore)}</p>
       <Form1 />
+      <Form2 />
     </div>
   );
 }
