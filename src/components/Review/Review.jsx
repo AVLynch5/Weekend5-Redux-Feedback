@@ -1,4 +1,5 @@
 //import useSelector to access stored data
+import axios from "axios";
 import { useSelector } from "react-redux";
 //import useHistory for routing
 import { useHistory } from "react-router";
@@ -10,8 +11,11 @@ function Review() {
     const handleSubmit = (event) => {
         //prevent default form behavior
         event.preventDefault();
-        //axios POST data: tempObj and dispatch to storedFeedbackReducer?
-            //on success, .then history.push to success confirmation page
+        //axios POST data: tempObj -> on success, .then history.push to success confirmation page
+        axios({
+            method: 'POST',
+            url: '/'
+        })
     }
 
     return(
