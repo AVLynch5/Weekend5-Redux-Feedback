@@ -84,7 +84,9 @@ function Admin() {
                             <td>{item.support}</td>
                             <td>{item.comments}</td>
                             <td>{item.date}</td>
-                            <td>Flag Button</td>
+                            <td>
+                                {item.flagged ? (<button>Unflag</button>) : (<button>Flag</button>)}
+                            </td>
                             <td><button onClick={() => handleFeedbackDelete(item.id)}>Delete</button></td>
                         </tr>
                     )}
