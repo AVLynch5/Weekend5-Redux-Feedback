@@ -18,22 +18,42 @@ const storedFeedbackReducer = (state = [], action) => {
 //reducer to temporarily hold feedback object
 const tempFeedbackReducer = (state = {form1: '', form2: '', form3: '', form4: ''}, action) => {
     //TODO - set with data stored temporarily for form submit
-    if (action.type === 'SET_FORM_1') {
-        return {...state, form1: action.payload}
+    //if (action.type === 'SET_FORM_1') {
+    //    return {...state, form1: action.payload}
+    //}
+    //if (action.type === 'SET_FORM_2') {
+    //    return {...state, form2: action.payload}
+    //}
+    //if (action.type === 'SET_FORM_3') {
+    //    return {...state, form3: action.payload}
+    //}
+    //if (action.type === 'SET_FORM_4') {
+    //    return {...state, form4: action.payload}
+    //}
+    //if (action.type === 'CLEAR_TEMPFB') {
+    //    return {form1: '', form2: '', form3: '', form4: ''};
+    //}
+    //return state;
+    //IDEA - replace wall of if statements with a switch
+    switch (action.type) {
+        case 'SET_FORM_1':
+            return {...state, form1: action.payload};
+            break;
+        case 'SET_FORM_2':
+            return {...state, form2: action.payload};
+            break;
+        case 'SET_FORM_3':
+            return {...state, form3: action.payload};
+            break;
+        case 'SET_FORM_4':
+            return {...state, form4: action.payload};
+            break;
+        case 'CLEAR_TEMPFB':
+            return {form1: '', form2: '', form3: '', form4: ''};
+            break;
+        default:
+            return state;
     }
-    if (action.type === 'SET_FORM_2') {
-        return {...state, form2: action.payload}
-    }
-    if (action.type === 'SET_FORM_3') {
-        return {...state, form3: action.payload}
-    }
-    if (action.type === 'SET_FORM_4') {
-        return {...state, form4: action.payload}
-    }
-    if (action.type === 'CLEAR_TEMPFB') {
-        return {form1: '', form2: '', form3: '', form4: ''};
-    }
-    return state;
 }
 
 //declare store instance - store is js object that holds info
