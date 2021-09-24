@@ -15,7 +15,7 @@ function Form2() {
     const dispatch = useDispatch();
 
     //declare history
-    const history = useDispatch();
+    const history = useHistory();
 
     //import useSelector - use instead of state variable. Call form1 property for Form1!
     const feedbackobj = useSelector(store => store.tempFeedbackReducer);
