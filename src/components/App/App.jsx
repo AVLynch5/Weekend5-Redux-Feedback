@@ -11,6 +11,7 @@ import Form3 from '../Form3/Form3';
 import Form4 from '../Form4/Form4';
 import Review from '../Review/Review';
 import Success from '../Success/Success';
+import Admin from '../Admin/Admin';
 //import Router, Route, Link for hash routing
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
@@ -47,6 +48,9 @@ function App() {
         </Route>
         <Route path="/Success">
           <Success />
+        </Route>
+        <Route path="/admin">
+          <Admin />
         </Route>
       </Router>
     </div>
