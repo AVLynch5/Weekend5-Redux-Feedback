@@ -9,6 +9,7 @@ import Form2 from '../Form2/Form2';
 import Form3 from '../Form3/Form3';
 import Form4 from '../Form4/Form4';
 import Review from '../Review/Review';
+import Success from '../Success/Success';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
       <Form3 />
       <Form4 />
       <Review />
+      <Success />
     </div>
   );
 }
