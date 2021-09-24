@@ -6,6 +6,17 @@ const router = express.Router();
 const pool = require('../modules/pool.js');
 
 //GET
+router.get('/', (req, res) => {
+    //GET query to DB - newest feedback (highest ID) at top
+    const queryText = `SELECT * FROM "feedback" ORDER BY "id" DESC;`;
+    pool.query(queryText).then((result) => {
+        console.log('Retrieved feedback data from DB', result);
+        res.send(result.rows);
+    }).catch((error) => {
+        console.log('Error during GET from DB', error);
+        res.sendStatus(500);
+    })
+})
 
 //POST - add feedback obj to DB
 router.post('/', (req, res) => {
