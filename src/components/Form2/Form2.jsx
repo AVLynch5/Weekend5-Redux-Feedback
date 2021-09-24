@@ -45,4 +45,4 @@ function Form2() {
     );
 }
 
-export default Form1;
+export default Form2;
