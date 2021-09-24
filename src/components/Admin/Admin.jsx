@@ -65,6 +65,23 @@ function Admin() {
         putFeedback(feedbackId, feedbackBool);
     }
 
+    //function putFeedback - takes in item id and item flagged bool. Declares var toggleBool to switch value of bool. Makes axios PUT call to server to change value of bool to toggleBool then calls GET
+    const putFeedback = (feedbackId, feedbackBool) => {
+        //declare toggleBool to switch current value of boolean
+        const toggleBool = !feedbackBool;
+        //axios
+        axios({
+            method: 'PUT',
+            url: `/feedback/${feedbackId}`,
+            data: {bool: toggleBool},
+        }).then((response) => {
+            //GET function to refresh DOM
+            refreshFeedback();
+        }).catch((error) => {
+            console.log('Error changing BOOL value in DB', error);
+        })
+    }
+
     return(
         <>
             <div>
