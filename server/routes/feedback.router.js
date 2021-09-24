@@ -46,4 +46,21 @@ router.delete('/:id', (req, res) => {
     })
 })
 
+//PUT - to change boolean value of flagged status at object with provided id
+router.put('/:id', (req, res) => {
+    //id from params
+    const feedbackId = req.params.id;
+    //bool from req.body
+    const feedbackBool = req.body.bool;
+    //SQL query
+    const queryText = `UPDATE "feedback" SET "flagged" = $1 WHERE "id" = $2;`;
+    pool.query(queryText, [feedbackBool, feedbackId]).then((result) =>{
+        console.log('PUT-updated flagged to', feedbackBool);
+        res.sendStatus(201);
+    }).catch((error) => {
+        console.log('PUT-Error changing bool for feedback obj with id', feedbackId);
+        res.sendStatus(500);
+    })
+})
+
 module.exports = router;
