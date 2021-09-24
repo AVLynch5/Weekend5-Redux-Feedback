@@ -59,6 +59,12 @@ function Admin() {
         })
     }
 
+    //function handleFeedbackFlag - takes in item id and item flagged boolean and passes them to putFeedback
+    const handleFeedbackFlag = (feedbackId, feedbackBool) => {
+        console.log('User is toggling flagged status', feedbackId, feedbackBool);
+        putFeedback(feedbackId, feedbackBool);
+    }
+
     return(
         <>
             <div>
@@ -85,7 +91,11 @@ function Admin() {
                             <td>{item.comments}</td>
                             <td>{item.date}</td>
                             <td>
-                                {item.flagged ? (<button>Unflag</button>) : (<button>Flag</button>)}
+                                {item.flagged ? 
+                                (<button onClick={() => handleFeedbackFlag(item.id, item.flagged)}>Unflag</button>)
+                                :
+                                (<button onClick={() => handleFeedbackFlag(item.id, item.flagged)}>Flag</button>)
+                                }
                             </td>
                             <td><button onClick={() => handleFeedbackDelete(item.id)}>Delete</button></td>
                         </tr>
