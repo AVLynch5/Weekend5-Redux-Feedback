@@ -24,24 +24,14 @@ function Form4() {
     const handleSubmit = (event) => {
         //prevent default form behavior 
         event.preventDefault();
-        //conditional to check user input - input validation
-        if (feedbackobj.form4 > 0 && feedbackobj.form4 < 6) {
-            //const action = {type: 'SET_FORM_4', payload: feedbackobj.form4}; - this is already done! If success, route to next page and retain value.
-            //dispatch action
-            //dispatch(action);
-            history.push("/Review");
-        } else {
-            alert('Please enter a valid number between 1 and 5');
-            return;
-        }
-        //setForm4Data(''); - no longer want to clear input after submit button. If we return to this page, user should see entered value and be able to change.
-        
+        //comments are optional - no validation
+        history.push("/Review");
     }
     return(
         <>
         <h2 className="page-header">Any comments you want to leave?</h2>
         <form className="form" onSubmit={handleSubmit}>
-            <input placeholder="Comments?" value={feedbackobj.form4} onChange={(event) => dispatch({type: 'SET_FORM_4', payload: event.target.value})} />
+            <input placeholder="Comments?" type="text" value={feedbackobj.form4} onChange={(event) => dispatch({type: 'SET_FORM_4', payload: event.target.value})} />
             <button type="submit">Next</button>
         </form>
         </>
