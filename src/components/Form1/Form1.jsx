@@ -41,7 +41,7 @@ function Form1() {
         <>
         <h2 className="page-header">How are you feeling today?</h2>
         <form className="form" onSubmit={handleSubmit}>
-            <input required placeholder="Feeling?" value={feedbackobj.form1} onChange={(event) => dispatch({type: 'SET_FORM_1', payload: event.target.value})} />
+            <input required placeholder="Feeling?" type="number" value={feedbackobj.form1} onChange={(event) => dispatch({type: 'SET_FORM_1', payload: event.target.value})} />
             <button type="submit">Next</button>
         </form>
         </>

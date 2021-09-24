@@ -41,7 +41,7 @@ function Form3() {
         <>
         <h2 className="page-header">How well are you being supported?</h2>
         <form className="form" onSubmit={handleSubmit}>
-            <input required placeholder="Support?" value={feedbackobj.form3} onChange={(event) => dispatch({type: 'SET_FORM_3', payload: event.target.value})} />
+            <input required placeholder="Support?" type="number" value={feedbackobj.form3} onChange={(event) => dispatch({type: 'SET_FORM_3', payload: event.target.value})} />
             <button type="submit">Next</button>
         </form>
         </>
