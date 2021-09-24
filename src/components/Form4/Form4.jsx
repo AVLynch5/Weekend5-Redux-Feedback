@@ -14,6 +14,9 @@ function Form4() {
     //declare dispatch
     const dispatch = useDispatch();
 
+    //declare history
+    const history = useHistory();
+
     //import useSelector - use instead of state variable. Call form1 property for Form1!
     const feedbackobj = useSelector(store => store.tempFeedbackReducer);
 
@@ -26,7 +29,7 @@ function Form4() {
             //const action = {type: 'SET_FORM_4', payload: feedbackobj.form4}; - this is already done! If success, route to next page and retain value.
             //dispatch action
             //dispatch(action);
-            //history.push(route); to redirect user to next form
+            history.push("/Review");
         } else {
             alert('Please enter a valid number between 1 and 5');
             return;
