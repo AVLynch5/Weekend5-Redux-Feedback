@@ -38,7 +38,7 @@ const tempFeedbackReducer = (state = {form1: 0, form2: 0, form3: 0, form4: 0, fo
 
 //declare store instance - store is js object that holds info
 const storeInstance = createStore(
-    CombineReducers({
+    combineReducers({
         storedFeedbackReducer, tempFeedbackReducer
     }),
     applyMiddleware(logger),
