@@ -30,6 +30,9 @@ const tempFeedbackReducer = (state = {form1: '', form2: '', form3: '', form4: ''
     if (action.type === 'SET_FORM_4') {
         return {...state, form4: action.payload}
     }
+    if (action.type === 'CLEAR_TEMPFB') {
+        return {form1: '', form2: '', form3: '', form4: ''};
+    }
     return state;
 }
 
