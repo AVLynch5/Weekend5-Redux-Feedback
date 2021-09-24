@@ -13,7 +13,13 @@ import { Provider } from 'react-redux';
 //reducer to interact with DB
 const storedFeedbackReducer = (state = [], action) => {
     //TODO - set w/ data from server/DB
-    return state;
+    switch (action.type) {
+        //GET action
+        case 'GET_FEEDBACK_DATA':
+            return action.payload;
+        default:
+            return state;
+    }
 }
 //reducer to temporarily hold feedback object
 const tempFeedbackReducer = (state = {form1: '', form2: '', form3: '', form4: ''}, action) => {
@@ -38,19 +44,14 @@ const tempFeedbackReducer = (state = {form1: '', form2: '', form3: '', form4: ''
     switch (action.type) {
         case 'SET_FORM_1':
             return {...state, form1: action.payload};
-            break;
         case 'SET_FORM_2':
             return {...state, form2: action.payload};
-            break;
         case 'SET_FORM_3':
             return {...state, form3: action.payload};
-            break;
         case 'SET_FORM_4':
             return {...state, form4: action.payload};
-            break;
         case 'CLEAR_TEMPFB':
             return {form1: '', form2: '', form3: '', form4: ''};
-            break;
         default:
             return state;
     }
