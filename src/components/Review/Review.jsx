@@ -8,6 +8,9 @@ function Review() {
     //declare store to access temp info
     const tempObj = useSelector(store => store.tempFeedbackReducer);
 
+    //declare history
+    const history = useHistory();
+
     const handleSubmit = (event) => {
         //prevent default form behavior
         event.preventDefault();
@@ -19,7 +22,7 @@ function Review() {
         }).then((response) => {
             console.log('Successfully added new feedback');
             //call GET function to refresh admin page
-            //history.push(confirmation screen);
+            history.push("/Success");
         }).catch((error) => {
             console.log('Error adding new feedback', error);
         })
