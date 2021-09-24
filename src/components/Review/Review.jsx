@@ -14,7 +14,14 @@ function Review() {
         //axios POST data: tempObj -> on success, .then history.push to success confirmation page
         axios({
             method: 'POST',
-            url: '/'
+            url: '/feedback',
+            data: tempObj,
+        }).then((response) => {
+            console.log('Successfully added new feedback');
+            //call GET function to refresh admin page
+            //history.push(confirmation screen);
+        }).catch((error) => {
+            console.log('Error adding new feedback', error);
         })
     }
 
