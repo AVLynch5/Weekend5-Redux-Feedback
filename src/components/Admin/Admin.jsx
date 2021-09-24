@@ -58,11 +58,11 @@ function Admin() {
                     {dataArray.map((item, i) => 
                         <tr key={i}> 
                             <td>{item.feeling}</td>
-                            <td>{item.comprehension}</td>
+                            <td>{item.understanding}</td>
                             <td>{item.support}</td>
                             <td>{item.comments}</td>
                             <td>{item.date}</td>
-                            <td>{item.flagged}</td>
+                            <td>Flag Button</td>
                             <td>Delete Button</td>
                         </tr>
                     )}
