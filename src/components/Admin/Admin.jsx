@@ -11,7 +11,7 @@ function Admin() {
     //declare dispatch
     const dispatch = useDispatch();
 
-    //declare store - access array storedFeedbackReducer
+    //declare store - access array storedFeedbackReducer which should be populated by GET
     const dataArray = useSelector(store => store.storedFeedbackReducer);
 
     //useEffect with GET function to GET feedback data from server on page load
@@ -49,11 +49,23 @@ function Admin() {
                         <th>Comprehension</th>
                         <th>Support</th>
                         <th>Comments</th>
+                        <th>Date</th>
+                        <th>Flag</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
-
+                    {dataArray.map((item, i) => 
+                        <tr key={i}> 
+                            <td>{item.feeling}</td>
+                            <td>{item.comprehension}</td>
+                            <td>{item.support}</td>
+                            <td>{item.comments}</td>
+                            <td>{item.date}</td>
+                            <td>{item.flagged}</td>
+                            <td>Delete Button</td>
+                        </tr>
+                    )}
                 </tbody>
             </table>
 
