@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 //import useHistory
 import { useHistory } from "react-router";
 
-function Form1() {
+function Form2() {
     //declare state variable for form data - for clearing form after submission
     //const [form1Data, setForm1Data] = useState('');
 
@@ -22,8 +22,8 @@ function Form1() {
         //prevent default form behavior 
         event.preventDefault();
         //conditional to check user input - input validation
-        if (feedbackobj.form1 > 0 && feedbackobj.form1 < 6) {
-            //const action = {type: 'SET_FORM_1', payload: feedbackobj.form1}; - this is already done! If success, route to next page and retain value.
+        if (feedbackobj.form2 > 0 && feedbackobj.form2 < 6) {
+            //const action = {type: 'SET_FORM_2', payload: feedbackobj.form2}; - this is already done! If success, route to next page and retain value.
             //dispatch action
             //dispatch(action);
             //history.push(route); to redirect user to next form
@@ -31,14 +31,14 @@ function Form1() {
             alert('Please enter a valid number between 1 and 5');
             return;
         }
-        //setForm1Data(''); - no longer want to clear input after submit button. If we return to this page, user should see entered value and be able to change.
+        //setForm2Data(''); - no longer want to clear input after submit button. If we return to this page, user should see entered value and be able to change.
         
     }
     return(
         <>
-        <h2 className="page-header"></h2>
+        <h2 className="page-header">How well are you understanding the content?</h2>
         <form className="form" onSubmit={handleSubmit}>
-            <input required placeholder="Feeling?" value={feedbackobj.form1} onChange={(event) => dispatch({type: 'SET_FORM_1', payload: event.target.value})} />
+            <input required placeholder="Understanding?" value={feedbackobj.form2} onChange={(event) => dispatch({type: 'SET_FORM_2', payload: event.target.value})} />
             <button type="submit">Next</button>
         </form>
         </>
