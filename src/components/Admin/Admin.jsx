@@ -6,6 +6,7 @@ import axios from 'axios';
 import {useDispatch} from 'react-redux';
 //import useSelector 
 import { useSelector } from 'react-redux';
+import { CommandCompleteMessage } from 'pg-protocol/dist/messages';
 
 function Admin() {
     //declare dispatch
@@ -39,6 +40,25 @@ function Admin() {
         })
     }
 
+    //handleFeedbackDelete - calls function deleteFeedback on button click. Takes feedbackId
+    const handleFeedbackDelete = (feedbackId) => {
+        console.log('Admin deleted feedback with ID', feedbackId);
+        deleteFeedback(feedbackId);
+    }
+
+    //function deleteFeedback - axios delete call. Takes feedbackId
+    const deleteFeedback = (feedbackId) => {
+        axios({
+            method: 'DELETE',
+            url: `/feedback/${feedbackId}`,
+        }).then((response) => {
+            //then GET function to re-render
+            refreshFeedback();
+        }).catch((error) => {
+            console.log('Error deleting feedback', error);
+        })
+    }
+
     return(
         <>
             <div>
@@ -65,7 +85,7 @@ function Admin() {
                             <td>{item.comments}</td>
                             <td>{item.date}</td>
                             <td>Flag Button</td>
-                            <td>Delete Button</td>
+                            <td><button onClick={() => handleFeedbackDelete(item.id)}>Delete</button></td>
                         </tr>
                     )}
                 </tbody>
