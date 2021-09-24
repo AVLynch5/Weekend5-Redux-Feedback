@@ -5,10 +5,15 @@ function Home() {
     //import history
     const history = useHistory();
 
+    //function to call history.push (aka handle route) on click
+    const handleStart = () => {
+        history.push("/Form1")
+    }
+
     return(
         <>
             <h1>Click here to give Feedback!</h1>
-            <button onClick={history.push("/Form1")}>Start</button>
+            <button onClick={handleStart}>Start</button>
         </>
     );
 }
