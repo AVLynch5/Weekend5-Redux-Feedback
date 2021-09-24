@@ -1,4 +1,4 @@
-function AdminItems({item, handleFeedbackFlag, handleFeedbackDelete}) {
+function AdminItems({item, deleteFeedback, putFeedback}) {
     //handleFeedbackDelete - calls function deleteFeedback on button click. Takes feedbackId
     const handleFeedbackDelete = (feedbackId) => {
         console.log('Admin deleted feedback with ID', feedbackId);
