@@ -11,6 +11,7 @@ function Review() {
     //declare history
     const history = useHistory();
 
+    //handleSubmit function - When moved to app.jsx, I couldn't get this to work. Despite importing useHistory and declaring history, history undefined...
     const handleSubmit = (event) => {
         //prevent default form behavior
         event.preventDefault();
