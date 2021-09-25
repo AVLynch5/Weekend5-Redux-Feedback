@@ -22,7 +22,7 @@ function AdminItems({item, deleteFeedback, putFeedback}) {
                 <td>{item.understanding}</td>
                 <td>{item.support}</td>
                 <td>{item.comments}</td>
-                <td>{moment(item.date).format('l')}</td>
+                <td>{moment(item.date).format('lll')}</td>
                 <td>
                     {item.flagged ? 
                     (<button onClick={() => handleFeedbackFlag(item.id, item.flagged)}>Unflag</button>)
