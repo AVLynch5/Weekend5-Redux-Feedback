@@ -10,8 +10,9 @@ CREATE TABLE "feedback" (
   "support" INT not null,
   "comments" text,
   "flagged" boolean default false,
-  "date" date not null default CURRENT_TIMESTAMP
+  "date" timestamp not null default CURRENT_TIMESTAMP
 ); 
+-- timestamp by default provides date/time w/o timezone... timestamptz provides tz
 
 -- Sample feedback item
 INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
