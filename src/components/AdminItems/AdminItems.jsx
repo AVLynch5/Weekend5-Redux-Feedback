@@ -1,12 +1,28 @@
 //import moment to format date
 import moment from "moment";
+//import sweetalerts for delete validation
+import swal from "sweetalert";
 
 function AdminItems({item, deleteFeedback, putFeedback}) {
     
-    //handleFeedbackDelete - calls function deleteFeedback on button click. Takes feedbackId
+    //handleFeedbackDelete - delete validation. Calls function deleteFeedback on button click with confirmation. Takes feedbackId
     const handleFeedbackDelete = (feedbackId) => {
-        console.log('Admin deleted feedback with ID', feedbackId);
-        deleteFeedback(feedbackId);
+        //sweetalert
+        swal({
+            title: 'Really delete Feedback?',
+            text: 'Once deleted, feedback cannot be recovered!',
+            icon: 'warning',
+            buttons: ['Heck no', 'Delete!'],
+            dangerMode: true,
+        }).then((confirmDelete) => {
+            if (confirmDelete) {
+                swal('The feedback was deleted', {button: 'Great!', icon: 'success',});
+                deleteFeedback(feedbackId);
+            } else {
+                swal('The feedback was not deleted', {button: 'Excellent!'});
+                return;//cancels function, deleteFeedback not called
+            }
+        })
     }
 
     //function handleFeedbackFlag - takes in item id and item flagged boolean and passes them to putFeedback
