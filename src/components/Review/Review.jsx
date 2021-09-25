@@ -3,6 +3,8 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 //import useHistory for routing
 import { useHistory } from "react-router";
+//import sweetalerts to handle confirm submit 
+import swal from "sweetalert";
 
 function Review() {
     //declare store to access temp info
@@ -16,6 +18,26 @@ function Review() {
         //prevent default form behavior
         event.preventDefault();
         //axios POST data: tempObj -> on success, .then history.push to success confirmation page
+        //sweetalert here
+        swal({
+            title: 'Really submit Feedback?',
+            text: 'Once submitted, feedback cannot be changed!',
+            icon: 'warning',
+            buttons: ["No Chance", "Submit!"], //adds cancel button
+            dangerMode: true,
+        }).then((confirmPOST) => {
+            if (confirmPOST) {
+                swal('Your feedback was submitted', {button: 'Phenomenal!', icon: 'success',});
+                postFeedback();
+            } else {
+                swal('Your feedback was not submitted', {button: 'Thank goodness...'});
+                return;//cancel function, postFeedback not called
+            }
+        })
+    }
+
+    //function postFeedback - called in swal
+    const postFeedback = () => {
         axios({
             method: 'POST',
             url: '/feedback',
