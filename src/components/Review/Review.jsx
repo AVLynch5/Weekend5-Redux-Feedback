@@ -51,6 +51,12 @@ function Review() {
         })
     }
 
+    //handleBack function to move backwards one page
+    const handleBack = () => {
+        //move backwards one page
+        history.push("/Form4")
+    }
+
     return(
         <>
             <h2 className="page-header">Review Your Feedback</h2>
@@ -60,6 +66,7 @@ function Review() {
             <p>Support: <span>{tempObj.form3}</span></p>
             <p>Comments: <span>{tempObj.form4}</span></p>
             <form className="form" onSubmit={handleSubmit}>
+                <button onClick={handleBack}>Back</button>
                 <button type="submit">Submit</button>
             </form>
         </>

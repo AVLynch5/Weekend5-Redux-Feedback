@@ -37,11 +37,19 @@ function Form3() {
         //setForm3Data(''); - no longer want to clear input after submit button. If we return to this page, user should see entered value and be able to change.
         
     }
+
+    //handleBack function to move backwards one page
+    const handleBack = () => {
+        //move backwards one page
+        history.push("/Form2")
+    }
+
     return(
         <>
         <h2 className="page-header">How well are you being supported?</h2>
         <form className="form" onSubmit={handleSubmit}>
             <input required placeholder="Support?" type="number" value={feedbackobj.form3} onChange={(event) => dispatch({type: 'SET_FORM_3', payload: event.target.value})} />
+            <button onClick={handleBack}>Back</button>
             <button type="submit">Next</button>
         </form>
         </>
