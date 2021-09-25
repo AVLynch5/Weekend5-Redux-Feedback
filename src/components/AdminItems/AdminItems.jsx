@@ -1,4 +1,8 @@
+//import moment to format date
+import moment from "moment";
+
 function AdminItems({item, deleteFeedback, putFeedback}) {
+    
     //handleFeedbackDelete - calls function deleteFeedback on button click. Takes feedbackId
     const handleFeedbackDelete = (feedbackId) => {
         console.log('Admin deleted feedback with ID', feedbackId);
@@ -18,7 +22,7 @@ function AdminItems({item, deleteFeedback, putFeedback}) {
                 <td>{item.understanding}</td>
                 <td>{item.support}</td>
                 <td>{item.comments}</td>
-                <td>{item.date}</td>
+                <td>{moment(item.date).format('l')}</td>
                 <td>
                     {item.flagged ? 
                     (<button onClick={() => handleFeedbackFlag(item.id, item.flagged)}>Unflag</button>)
