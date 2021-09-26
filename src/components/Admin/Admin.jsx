@@ -8,6 +8,8 @@ import AdminItems from '../AdminItems/AdminItems';
 import DeleteIcon from '@mui/icons-material/Delete';
 //import flag icon
 import FlagIcon from '@mui/icons-material/Flag';
+//import MUI Table tags
+import {Table, TableBody, TableCell, TableContainer, TableRow, Paper, TableHead} from '@mui/material';
 
 function Admin({refreshFeedback, deleteFeedback, putFeedback}) {
 
@@ -25,26 +27,26 @@ function Admin({refreshFeedback, deleteFeedback, putFeedback}) {
             <div>
                 <h1>Feedback Results</h1>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Feeling</th>
-                        <th>Comprehension</th>
-                        <th>Support</th>
-                        <th>Comments</th>
-                        <th>Date</th>
-                        <th>{<FlagIcon fontSize="small"/>}</th>
-                        <th>{<DeleteIcon fontSize="small"/>}</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {dataArray.map((item, i) => 
-                      <AdminItems item={item} key={i} deleteFeedback={deleteFeedback} putFeedback={putFeedback}/>
-                    )}
-                </tbody>
-            </table>
-
-        
+            <TableContainer component={Paper}>
+                <Table sx={{ minWidth: 600 }}>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Feeling</TableCell>
+                            <TableCell>Comprehension</TableCell>
+                            <TableCell>Support</TableCell>
+                            <TableCell>Comments</TableCell>
+                            <TableCell>Date</TableCell>
+                            <TableCell>{<FlagIcon fontSize="small"/>}</TableCell>
+                            <TableCell>{<DeleteIcon fontSize="small"/>}</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {dataArray.map((item, i) => 
+                        <AdminItems item={item} key={i} deleteFeedback={deleteFeedback} putFeedback={putFeedback}/>
+                        )}
+                    </TableBody>
+                </Table>
+            </TableContainer>
         </>
     );
 }
