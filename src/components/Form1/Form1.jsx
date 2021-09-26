@@ -6,6 +6,10 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 //import useHistory
 import { useHistory } from "react-router";
+//import slider from mui
+import { Slider } from '@mui/material';
+//import box from mui - to contain and size slider
+import { Box } from '@mui/material';
 
 function Form1() {
     //declare state variable for form data - for clearing form after submission
@@ -24,7 +28,7 @@ function Form1() {
     const handleSubmit = (event) => {
         //prevent default form behavior 
         event.preventDefault();
-        //conditional to check user input - input validation
+        //conditional to check user input - input validation - made redundant/unnecesary by slider bar
         if (feedbackobj.form1 > 0 && feedbackobj.form1 < 6) {
             //const action = {type: 'SET_FORM_1', payload: feedbackobj.form1}; - this is already done! If success, route to next page and retain value.
             //dispatch action
@@ -40,10 +44,22 @@ function Form1() {
     return(
         <>
         <h2 className="page-header">How are you feeling today?</h2>
-        <form className="form" onSubmit={handleSubmit}>
-            <input required placeholder="Feeling?" type="number" value={feedbackobj.form1} onChange={(event) => dispatch({type: 'SET_FORM_1', payload: event.target.value})} />
-            <button type="submit">Next</button>
-        </form>
+            <form className="form" onSubmit={handleSubmit}>
+                {/*<input required placeholder="Feeling?" type="number" value={feedbackobj.form1} onChange={(event) => dispatch({type: 'SET_FORM_1', payload: event.target.value})} />*/}
+                <Box sx={{mx: "auto", width: 300}}>    
+                    <Slider
+                        aria-label="Feeling?"
+                        defaultValue={3}
+                        valueLabelDisplay="auto"
+                        step={1}
+                        marks
+                        min={1}
+                        max={5}
+                        onChange={(event) => dispatch({type: 'SET_FORM_1', payload: event.target.value})}
+                    />
+                </Box>
+                <button type="submit">Next</button>
+            </form>
         </>
     );
 }
