@@ -10,6 +10,8 @@ import { useHistory } from "react-router";
 import { Box, Slider } from '@mui/material';
 //import sweetalerts
 import swal from "sweetalert";
+//import Button
+import Button from '@mui/material/Button';
 //import Prev icon
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 //import Nect icon
