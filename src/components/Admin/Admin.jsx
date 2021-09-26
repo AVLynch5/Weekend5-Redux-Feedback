@@ -4,6 +4,10 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 //import adminitems
 import AdminItems from '../AdminItems/AdminItems';
+//import delete icon
+import DeleteIcon from '@mui/icons-material/Delete';
+//import flag icon
+import FlagIcon from '@mui/icons-material/Flag';
 
 function Admin({refreshFeedback, deleteFeedback, putFeedback}) {
 
@@ -29,8 +33,8 @@ function Admin({refreshFeedback, deleteFeedback, putFeedback}) {
                         <th>Support</th>
                         <th>Comments</th>
                         <th>Date</th>
-                        <th>Flag</th>
-                        <th>Delete</th>
+                        <th>{<FlagIcon fontSize="small"/>}</th>
+                        <th>{<DeleteIcon fontSize="small"/>}</th>
                     </tr>
                 </thead>
                 <tbody>
