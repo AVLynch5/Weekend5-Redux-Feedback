@@ -5,6 +5,11 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router";
 //import sweetalerts to handle confirm submit 
 import swal from "sweetalert";
+//import Button
+import Button from '@mui/material/Button';
+//import Prev icon
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
 function Review() {
     //declare store to access temp info
@@ -66,8 +71,8 @@ function Review() {
             <p>Support: <span>{tempObj.form3}</span></p>
             <p>Comments: <span>{tempObj.form4}</span></p>
             <form className="form" onSubmit={handleSubmit}>
-                <button onClick={handleBack}>Back</button>
-                <button type="submit">Submit</button>
+                <Button size="small" variant="outlined" startIcon={<ArrowBackIcon fontSize="small"/>} onClick={handleBack}>Back</Button>
+                <Button size="small" variant="contained" endIcon={<ArrowUpwardIcon fontSize="small"/>} type="submit">Submit</Button>
             </form>
         </>
     );
