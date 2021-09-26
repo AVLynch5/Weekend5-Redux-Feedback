@@ -10,6 +10,8 @@ import { useHistory } from "react-router";
 import { Slider } from '@mui/material';
 //import box from mui - to contain and size slider
 import { Box } from '@mui/material';
+//import sweetalerts to replace alerts
+import swal from "sweetalert";
 
 function Form1() {
     //declare state variable for form data - for clearing form after submission
@@ -35,7 +37,7 @@ function Form1() {
             //dispatch(action);
             history.push("/Form2");//to redirect user to next form
         } else {
-            alert('Please enter a valid number between 1 and 5');
+            swal('Please select a valid number between 1 and 5', {button: 'Got it!'});
             return;
         }
         //setForm1Data(''); - no longer want to clear input after submit button. If we return to this page, user should see entered value and be able to change.
