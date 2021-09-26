@@ -65,7 +65,6 @@ function Review() {
     return(
         <>
             <h2 className="page-header">Review Your Feedback</h2>
-            <br/>
             <p>Feeling: <span>{tempObj.form1}</span></p>
             <p>Understanding: <span>{tempObj.form2}</span></p>
             <p>Support: <span>{tempObj.form3}</span></p>
