@@ -2,6 +2,11 @@
 import { useDispatch } from "react-redux";
 //import useHistory;
 import { useHistory } from "react-router";
+//import Button
+import Button from '@mui/material/Button';
+//import restart icon
+import RestartAltIcon from '@mui/icons-material/RestartAlt';
+
 
 function Success() {
     //declare dispatch
@@ -21,7 +26,7 @@ function Success() {
             </div>
             <div>
                 <p>Thank you for your feedback!</p>
-                <button onClick={handleSubmissionSuccess}>Leave New Feedback</button>
+                <Button size="small" variant="contained" endIcon={<RestartAltIcon fontSize="small"/>} type="submit" onClick={handleSubmissionSuccess}>Leave New Feedback</Button>
             </div>
         </>
     );
