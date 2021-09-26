@@ -8,6 +8,12 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router";
 //import Textfield and Box
 import {TextField, Box} from '@mui/material';
+//import Button
+import Button from '@mui/material/Button';
+//import Prev icon
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+//import Nect icon
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 function Form4() {
     //declare state variable for form data - for clearing form after submission
@@ -44,8 +50,8 @@ function Form4() {
             <Box>
                 <TextField style={{width: 300}} size="small" label="Optional: Leave a Comment" type="text" value={feedbackobj.form4} onChange={(event) => dispatch({type: 'SET_FORM_4', payload: event.target.value})}/>
             </Box>
-            <button onClick={handleBack}>Back</button>
-            <button type="submit">Next</button>
+            <Button size="small" variant="outlined" startIcon={<ArrowBackIcon fontSize="small"/>} onClick={handleBack}>Back</Button>
+            <Button size="small" variant="contained" endIcon={<ArrowForwardIcon fontSize="small"/>} type="submit">Next</Button>
         </form>
         </>
     );

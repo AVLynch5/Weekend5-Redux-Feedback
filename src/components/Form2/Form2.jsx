@@ -10,6 +10,10 @@ import { useHistory } from "react-router";
 import { Box, Slider } from '@mui/material';
 //import sweetalerts
 import swal from "sweetalert";
+//import Prev icon
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+//import Nect icon
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 function Form2() {
     //declare state variable for form data - for clearing form after submission
@@ -64,9 +68,9 @@ function Form2() {
                         max={5}
                         onChange={(event) => dispatch({type: 'SET_FORM_2', payload: event.target.value})}
                     />
-                </Box>
-            <button onClick={handleBack}>Back</button>
-            <button type="submit">Next</button>
+            </Box>
+            <Button size="small" variant="outlined" startIcon={<ArrowBackIcon fontSize="small"/>} onClick={handleBack}>Back</Button>
+            <Button size="small" variant="contained" endIcon={<ArrowForwardIcon fontSize="small"/>} type="submit">Next</Button>
         </form>
         </>
     );
