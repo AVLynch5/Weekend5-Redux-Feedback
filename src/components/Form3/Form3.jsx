@@ -6,6 +6,8 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 //import useHistory
 import { useHistory } from "react-router";
+//import box and slider from mui
+import { Box, Slider } from '@mui/material';
 
 function Form3() {
     //declare state variable for form data - for clearing form after submission
@@ -48,7 +50,19 @@ function Form3() {
         <>
         <h2 className="page-header">How well are you being supported?</h2>
         <form className="form" onSubmit={handleSubmit}>
-            <input required placeholder="Support?" type="number" value={feedbackobj.form3} onChange={(event) => dispatch({type: 'SET_FORM_3', payload: event.target.value})} />
+            {/*<input required placeholder="Support?" type="number" value={feedbackobj.form3} onChange={(event) => dispatch({type: 'SET_FORM_3', payload: event.target.value})} />*/}
+            <Box sx={{mx: "auto", width: 300}}>    
+                <Slider
+                    aria-label="Supported?"
+                    defaultValue={feedbackobj.form3}
+                    valueLabelDisplay="auto"
+                    step={1}
+                    marks
+                    min={1}
+                    max={5}
+                    onChange={(event) => dispatch({type: 'SET_FORM_3', payload: event.target.value})}
+                />
+            </Box>
             <button onClick={handleBack}>Back</button>
             <button type="submit">Next</button>
         </form>

@@ -49,7 +49,7 @@ function Form1() {
                 <Box sx={{mx: "auto", width: 300}}>    
                     <Slider
                         aria-label="Feeling?"
-                        defaultValue={3}
+                        defaultValue={feedbackobj.form1}
                         valueLabelDisplay="auto"
                         step={1}
                         marks
