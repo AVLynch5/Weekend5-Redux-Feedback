@@ -8,6 +8,8 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router";
 //import box and slider from mui
 import { Box, Slider } from '@mui/material';
+//import sweetalerts
+import swal from "sweetalert";
 
 function Form2() {
     //declare state variable for form data - for clearing form after submission
@@ -33,7 +35,7 @@ function Form2() {
             //dispatch(action);
             history.push("/Form3");
         } else {
-            alert('Please enter a valid number between 1 and 5');
+            swal('Please select a valid number between 1 and 5', {button: 'Got it!'});
             return;
         }
         //setForm2Data(''); - no longer want to clear input after submit button. If we return to this page, user should see entered value and be able to change.
