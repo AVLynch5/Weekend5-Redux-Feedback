@@ -6,6 +6,8 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 //import useHistory
 import { useHistory } from "react-router";
+//import Textfield and Box
+import {TextField, Box} from '@mui/material';
 
 function Form4() {
     //declare state variable for form data - for clearing form after submission
@@ -38,7 +40,10 @@ function Form4() {
         <>
         <h2 className="page-header">Any comments you want to leave?</h2>
         <form className="form" onSubmit={handleSubmit}>
-            <input placeholder="Comments?" type="text" value={feedbackobj.form4} onChange={(event) => dispatch({type: 'SET_FORM_4', payload: event.target.value})} />
+            {/*<input placeholder="Comments?" type="text" value={feedbackobj.form4} onChange={(event) => dispatch({type: 'SET_FORM_4', payload: event.target.value})} />*/}
+            <Box>
+                <TextField style={{width: 300}} size="small" label="Optional: Leave a Comment" type="text" value={feedbackobj.form4} onChange={(event) => dispatch({type: 'SET_FORM_4', payload: event.target.value})}/>
+            </Box>
             <button onClick={handleBack}>Back</button>
             <button type="submit">Next</button>
         </form>
