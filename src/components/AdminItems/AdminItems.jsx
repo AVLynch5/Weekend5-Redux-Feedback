@@ -2,6 +2,8 @@
 import moment from "moment";
 //import sweetalerts for delete validation
 import swal from "sweetalert";
+//import Button
+import { Button } from "@mui/material";
 
 function AdminItems({item, deleteFeedback, putFeedback}) {
     
@@ -41,12 +43,12 @@ function AdminItems({item, deleteFeedback, putFeedback}) {
                 <td>{moment(item.date).format('lll')}</td>
                 <td>
                     {item.flagged ? 
-                    (<button onClick={() => handleFeedbackFlag(item.id, item.flagged)}>Unflag</button>)
+                    (<Button size="small" variant="outlined" onClick={() => handleFeedbackFlag(item.id, item.flagged)}>Unflag</Button>)
                     :
-                    (<button onClick={() => handleFeedbackFlag(item.id, item.flagged)}>Flag</button>)
+                    (<Button size="small" variant="contained" onClick={() => handleFeedbackFlag(item.id, item.flagged)}>Flag</Button>)
                     }
                 </td>
-                <td><button onClick={() => handleFeedbackDelete(item.id)}>Delete</button></td>
+                <td><Button size="small" variant="outlined" onClick={() => handleFeedbackDelete(item.id)}>Delete</Button></td>
             </tr>
         </>
     );
