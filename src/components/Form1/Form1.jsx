@@ -12,6 +12,10 @@ import { Slider } from '@mui/material';
 import { Box } from '@mui/material';
 //import sweetalerts to replace alerts
 import swal from "sweetalert";
+//import Button
+import { Button } from '@mui/material';
+//import Nect icon
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 function Form1() {
     //declare state variable for form data - for clearing form after submission
@@ -60,7 +64,7 @@ function Form1() {
                         onChange={(event) => dispatch({type: 'SET_FORM_1', payload: event.target.value})}
                     />
                 </Box>
-                <button type="submit">Next</button>
+                <Button size="small" variant="contained" endIcon={<ArrowForwardIcon fontSize="small"/>} type="submit">Next</Button>
             </form>
         </>
     );
