@@ -57,6 +57,7 @@ function Form2() {
     return(
         <>
         <h2 className="page-header">How well are you understanding the content?</h2>
+        <p>1 = worst understanding, 5 = best understanding</p>
         <form className="form" onSubmit={handleSubmit}>
             {/*<input required placeholder="Understanding?" type="number" value={feedbackobj.form2} onChange={(event) => dispatch({type: 'SET_FORM_2', payload: event.target.value})} />*/}
             <Box sx={{mx: "auto", width: 300}}>    

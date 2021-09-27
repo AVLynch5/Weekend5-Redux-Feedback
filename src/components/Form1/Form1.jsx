@@ -50,6 +50,7 @@ function Form1() {
     return(
         <>
         <h2 className="page-header">How are you feeling today?</h2>
+        <p>1 = worst feeling, 5 = best feeling</p>
             <form className="form" onSubmit={handleSubmit}>
                 {/*<input required placeholder="Feeling?" type="number" value={feedbackobj.form1} onChange={(event) => dispatch({type: 'SET_FORM_1', payload: event.target.value})} />*/}
                 <Box sx={{mx: "auto", width: 300}}>    
