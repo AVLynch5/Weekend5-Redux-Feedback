@@ -17,7 +17,7 @@ function Admin({refreshFeedback, deleteFeedback, putFeedback}) {
     //declare store - access array storedFeedbackReducer which should be populated by GET
     const dataArray = useSelector(store => store.storedFeedbackReducer);
 
-    //declare styles to add style properties to TableContainer and Table
+    //declare styles to add style properties to TableContainer and Table. But how to control width??
     const styles = () => ({
         root: {
             width: '100%',
@@ -39,7 +39,7 @@ function Admin({refreshFeedback, deleteFeedback, putFeedback}) {
                 <h1>Feedback Results</h1>
             </div>
                     <TableContainer className={styles.root} component={Paper}>
-                        <Table className={styles.table}>
+                        <Table className={styles.table} border={3}>
                             <TableHead>
                                 <TableRow>
                                     <TableCell align="center">Feeling</TableCell>
