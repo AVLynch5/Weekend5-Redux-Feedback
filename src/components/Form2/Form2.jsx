@@ -67,7 +67,7 @@ function Form2() {
                         valueLabelDisplay="auto"
                         step={1}
                         marks
-                        min={1}
+                        min={0}
                         max={5}
                         onChange={(event) => dispatch({type: 'SET_FORM_2', payload: event.target.value})}
                     />
