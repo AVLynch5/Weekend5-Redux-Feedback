@@ -4,6 +4,8 @@ import moment from "moment";
 import swal from "sweetalert";
 //import Button
 import { Button } from "@mui/material";
+//import MUI table components - table row and table cell
+import { TableRow, TableCell } from '@mui/material';
 
 function AdminItems({item, deleteFeedback, putFeedback}) {
     
@@ -35,21 +37,21 @@ function AdminItems({item, deleteFeedback, putFeedback}) {
 
     return(
         <>
-            <tr> 
-                <td>{item.feeling}</td>
-                <td>{item.understanding}</td>
-                <td>{item.support}</td>
-                <td>{item.comments}</td>
-                <td>{moment(item.date).format('lll')}</td>
-                <td>
+            <TableRow> 
+                <TableCell align="center">{item.feeling}</TableCell>
+                <TableCell align="center">{item.understanding}</TableCell>
+                <TableCell align="center">{item.support}</TableCell>
+                <TableCell align="center"><div className="comments-DIV">{item.comments}</div></TableCell>
+                <TableCell align="center">{moment(item.date).format('lll')}</TableCell>
+                <TableCell align="center">
                     {item.flagged ? 
                     (<Button size="small" variant="outlined" onClick={() => handleFeedbackFlag(item.id, item.flagged)}>Unflag</Button>)
                     :
                     (<Button size="small" variant="contained" onClick={() => handleFeedbackFlag(item.id, item.flagged)}>Flag</Button>)
                     }
-                </td>
-                <td><Button size="small" variant="outlined" onClick={() => handleFeedbackDelete(item.id)}>Delete</Button></td>
-            </tr>
+                </TableCell>
+                <TableCell align="center"><Button size="small" variant="outlined" onClick={() => handleFeedbackDelete(item.id)}>Delete</Button></TableCell>
+            </TableRow>
         </>
     );
 }
