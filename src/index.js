@@ -22,7 +22,7 @@ const storedFeedbackReducer = (state = [], action) => {
     }
 }
 //reducer to temporarily hold feedback object
-const tempFeedbackReducer = (state = {form1: '', form2: '', form3: '', form4: ''}, action) => {
+const tempFeedbackReducer = (state = {form1: 0, form2: 0, form3: 0, form4: ''}, action) => {
     //TODO - set with data stored temporarily for form submit
     //if (action.type === 'SET_FORM_1') {
     //    return {...state, form1: action.payload}
