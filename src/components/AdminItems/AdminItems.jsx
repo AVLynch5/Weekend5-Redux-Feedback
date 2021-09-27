@@ -6,8 +6,23 @@ import swal from "sweetalert";
 import { Button } from "@mui/material";
 //import MUI table components - table row and table cell
 import { TableRow, TableCell } from '@mui/material';
+//import CSS file
+import './AdminItems.css';
 
 function AdminItems({item, deleteFeedback, putFeedback}) {
+    //function to control background color of table row
+    const handleStyle = () => {
+        let style;
+        if (item.flagged) {
+            style = 'toFlag'
+        } else {
+            style = 'notToFlag'
+        }
+        return style;
+    }
+
+    //declare style = handlestyle. Style should either be toFlag or notToFlag.
+    let style = handleStyle();
     
     //handleFeedbackDelete - delete validation. Calls function deleteFeedback on button click with confirmation. Takes feedbackId
     const handleFeedbackDelete = (feedbackId) => {
@@ -37,7 +52,7 @@ function AdminItems({item, deleteFeedback, putFeedback}) {
 
     return(
         <>
-            <TableRow> 
+            <TableRow className={style}> 
                 <TableCell align="center">{item.feeling}</TableCell>
                 <TableCell align="center">{item.understanding}</TableCell>
                 <TableCell align="center">{item.support}</TableCell>

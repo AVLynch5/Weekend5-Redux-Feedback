@@ -1,4 +1,10 @@
 .comments-DIV {
+    display: block;
+    margin: 0 auto;
     width: 275px;
     word-break: break-word;
+}
+
+.toFlag {
+    background-color: rgb(132, 220, 246);
 }
