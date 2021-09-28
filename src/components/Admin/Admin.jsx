@@ -23,7 +23,7 @@ function Admin({refreshFeedback, deleteFeedback, putFeedback}) {
             width: '100%',
             overflowX: "auto",
         }, table: {
-            minwidth: 600,
+            minWidth: 650,
         }
     });
 
@@ -38,7 +38,7 @@ function Admin({refreshFeedback, deleteFeedback, putFeedback}) {
             <div>
                 <h1>Feedback Results</h1>
             </div>
-                    <TableContainer className={styles.root} component={Paper}>
+                    <TableContainer className={styles.root} /*style={{width: 900, margin: 'auto'}}*/ component={Paper}>
                         <Table className={styles.table} border={3}>
                             <TableHead>
                                 <TableRow>
