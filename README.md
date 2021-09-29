@@ -27,6 +27,8 @@ At this time, the application is semi-responsive and can be viewed on desktops o
 
 Many thanks to [Prime Digital Academy](https://www.primeacademy.io/?utm_campaign=brand_search&utm_medium=cpc&utm_source=google&utm_medium=ppc&utm_campaign=Brand+Search&utm_term=prime%20digital%20academy&utm_source=adwords&hsa_mt=e&hsa_kw=prime%20digital%20academy&hsa_grp=34455376016&hsa_tgt=kwd-292678835500&hsa_ad=209774192547&hsa_ver=3&hsa_acc=5885076177&hsa_cam=670836869&hsa_src=g&hsa_net=adwords&gclid=CjwKCAjw4KyJBhAbEiwAaAQbE9A9_CGO-PE_cgrfInn9Py0N73UJJ5vs_0BQomI6E13bOdA_c6EmkRoCJikQAvD_BwE), without whom this would not be possible.
 
+Additional thanks to Sam at [PurgoMalum](http://www.purgomalum.com/index.html) for making comment censorship quick and easy!
+
 ## Support
 
 Please contact me at anthonyvlynch5@gmail.com with any concerns, problems, or suggested improvements.
