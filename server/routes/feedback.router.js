@@ -1,5 +1,6 @@
 //feedback.router.js
 
+const { default: axios } = require('axios');
 const express = require('express');
 const router = express.Router();
 //to communicate with database
@@ -59,6 +60,18 @@ router.put('/:id', (req, res) => {
         res.sendStatus(201);
     }).catch((error) => {
         console.log('PUT-Error changing bool for feedback obj with id', feedbackId);
+        res.sendStatus(500);
+    })
+})
+
+//add censorship GET using PurgoMalum
+router.get('/censor/:text', (req, res) => {
+    const text = req.params.text;
+    axios.get(`https://www.purgomalum.com/service/json?text=${text}`)
+    .then((response) => {
+        //response.data is ???
+        res.send(response.data);
+    }).catch((error) => {
         res.sendStatus(500);
     })
 })
