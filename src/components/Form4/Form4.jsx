@@ -14,6 +14,7 @@ import Button from '@mui/material/Button';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 //import Nect icon
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import axios from "axios";
 
 function Form4() {
     //declare state variable for form data - for clearing form after submission
@@ -33,7 +34,25 @@ function Form4() {
         //prevent default form behavior 
         event.preventDefault();
         //comments are optional - no validation
-        history.push("/Review");
+        //declare const censorText = feedbackobj.Form4
+        const censorText = feedbackobj.form4;
+        //check censorText via conditionals - if no comment proceed normally, else censor
+        if (!censorText) {
+            //console.log('no comment');
+            history.push("/Review");
+        } else {
+            //console.log('comment received');
+            axios({
+                method: 'GET',
+                url: `/feedback/censor/${censorText}`,
+            }).then((response) => {
+                //dispatch censored text from GET to feedbackobj
+                dispatch({type: 'SET_FORM_4', payload: response.data.result});
+                history.push("/Review");
+            }).catch((error) => {
+                console.log('ERROR CENSORING TEXT');
+            })
+        }
     }
 
     //handleBack function to move backwards one page
