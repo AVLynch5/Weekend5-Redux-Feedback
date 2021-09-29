@@ -67,7 +67,7 @@ router.put('/:id', (req, res) => {
 //add censorship GET using PurgoMalum
 router.get('/censor/:text', (req, res) => {
     const text = req.params.text;
-    axios.get(`https://www.purgomalum.com/service/json?text=${text}`)
+    axios.get(`https://www.purgomalum.com/service/json?fill_text=[REDACTED]&text=${text}`)
     .then((response) => {
         //response.data is ???
         res.send(response.data);
