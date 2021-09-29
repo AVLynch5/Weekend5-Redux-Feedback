@@ -10,8 +10,13 @@ import Button from '@mui/material/Button';
 //import Prev icon
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+//import useDispatch
+import { useDispatch } from "react-redux";
 
 function Review() {
+    //declare dispatch
+    const dispatch = useDispatch();
+
     //declare store to access temp info
     const tempObj = useSelector(store => store.tempFeedbackReducer);
 
@@ -49,7 +54,9 @@ function Review() {
             data: tempObj,
         }).then((response) => {
             console.log('Successfully added new feedback');
-            //call GET function to refresh admin page
+            //declare action to wipe tempFeedbackReducer
+            const action = {type: 'CLEAR_TEMPFB'};
+            dispatch(action);
             history.push("/Success");
         }).catch((error) => {
             console.log('Error adding new feedback', error);

@@ -1,5 +1,3 @@
-//import useDispatch;
-import { useDispatch } from "react-redux";
 //import useHistory;
 import { useHistory } from "react-router";
 //import Button
@@ -9,14 +7,10 @@ import RestartAltIcon from '@mui/icons-material/RestartAlt';
 
 
 function Success() {
-    //declare dispatch
-    const dispatch = useDispatch();
     //declare history
     const history = useHistory();
-    //function handleSubmissionSuccess - declare action to wipe tempFeedbackReducer and route to Form1
+    //function handleSubmissionSuccess - route to Form1
     const handleSubmissionSuccess = () => {
-        const action = {type: 'CLEAR_TEMPFB'};
-        dispatch(action);
         history.push("/Form1");
     }
     return(
