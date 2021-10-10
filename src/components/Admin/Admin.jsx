@@ -8,22 +8,24 @@ import AdminItems from '../AdminItems/AdminItems';
 import DeleteIcon from '@mui/icons-material/Delete';
 //import flag icon
 import FlagIcon from '@mui/icons-material/Flag';
-//Import Grid
-import { Grid } from '@mui/material';
 //import MUI Table tags
 import {Table, TableBody, TableCell, TableContainer, TableRow, Paper, TableHead} from '@mui/material';
+//import CSS
+import './Admin.css'
 
 function Admin({refreshFeedback, deleteFeedback, putFeedback}) {
     //declare store - access array storedFeedbackReducer which should be populated by GET
     const dataArray = useSelector(store => store.storedFeedbackReducer);
 
-    //declare styles to add style properties to TableContainer and Table. But how to control width??
+    //declare styles to add style properties to TableContainer and Table. But how to control width?? - this doesn't seem to work
     const styles = () => ({
         root: {
             width: '100%',
             overflowX: "auto",
         }, table: {
-            minWidth: 650,
+            marginLeft: '30px',
+            marginRight: '30px',
+            width: '80%'
         }
     });
 
@@ -38,8 +40,9 @@ function Admin({refreshFeedback, deleteFeedback, putFeedback}) {
             <div>
                 <h1>Feedback Results</h1>
             </div>
-                    <TableContainer className={styles.root} /*style={{width: 900, margin: 'auto'}}*/ component={Paper}>
-                        <Table className={styles.table} border={3}>
+                <Paper sx={{ width: '100%', overflow: 'hidden'}}>
+                    <TableContainer  sx={{maxWidth: 1200, margin: 'auto' }} /*className={styles.root} style={{width: 900, margin: 'auto'}} component={Paper}*/>
+                        <Table className="center" border={3}>
                             <TableHead>
                                 <TableRow>
                                     <TableCell align="center">Feeling</TableCell>
@@ -58,6 +61,7 @@ function Admin({refreshFeedback, deleteFeedback, putFeedback}) {
                             </TableBody>
                         </Table>
                     </TableContainer>
+                </Paper>
         </>
     );
 }
